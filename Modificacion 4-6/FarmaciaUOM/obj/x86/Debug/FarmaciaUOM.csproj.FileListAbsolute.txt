@@ -1,0 +1,15 @@
+c:\users\usuario\documents\visual studio 2010\Projects\FarmaciaUOM\FarmaciaUOM\bin\Debug\FarmaciaUOM.exe
+c:\users\usuario\documents\visual studio 2010\Projects\FarmaciaUOM\FarmaciaUOM\bin\Debug\FarmaciaUOM.pdb
+c:\users\usuario\documents\visual studio 2010\Projects\FarmaciaUOM\FarmaciaUOM\obj\x86\Debug\FarmaciaUOM.Properties.Resources.resources
+c:\users\usuario\documents\visual studio 2010\Projects\FarmaciaUOM\FarmaciaUOM\obj\x86\Debug\FarmaciaUOM.csproj.GenerateResource.Cache
+c:\users\usuario\documents\visual studio 2010\Projects\FarmaciaUOM\FarmaciaUOM\obj\x86\Debug\FarmaciaUOM.exe
+c:\users\usuario\documents\visual studio 2010\Projects\FarmaciaUOM\FarmaciaUOM\obj\x86\Debug\FarmaciaUOM.pdb
+c:\users\usuario\documents\visual studio 2010\Projects\FarmaciaUOM\FarmaciaUOM\obj\x86\Debug\FarmaciaUOM.Login.resources
+c:\users\usuario\documents\visual studio 2010\Projects\FarmaciaUOM\FarmaciaUOM\obj\x86\Debug\FarmaciaUOM.PrincipalFarmacia.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\FarmaciaUOM\FarmaciaUOM\bin\Debug\FarmaciaUOM.exe.config
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\FarmaciaUOM\FarmaciaUOM\obj\x86\Debug\FarmaciaUOM.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\FarmaciaUOM\FarmaciaUOM\obj\x86\Debug\FarmaciaUOM.BonoContribucion.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\FarmaciaUOM\FarmaciaUOM\obj\x86\Debug\FarmaciaUOM.DatosBono.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\FarmaciaUOM\FarmaciaUOM\obj\x86\Debug\FarmaciaUOM.BuscarBonoContribucion.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\FarmaciaUOM\FarmaciaUOM\obj\x86\Debug\FarmaciaUOM.RendicionBonoContribucion.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\FarmaciaUOM\FarmaciaUOM\obj\x86\Debug\FarmaciaUOM.Impresion_Bono.resources
