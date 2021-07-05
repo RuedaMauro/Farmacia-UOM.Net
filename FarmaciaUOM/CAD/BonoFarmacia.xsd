@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BonoFarmacia" targetNamespace="http://tempuri.org/BonoFarmacia.xsd" xmlns:mstns="http://tempuri.org/BonoFarmacia.xsd" xmlns="http://tempuri.org/BonoFarmacia.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HospitalConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FarmaciaUOM.Properties.Settings.GlobalReference.Default.HospitalConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RendicionBonoTableAdapter" GeneratorDataComponentClassName="RendicionBonoTableAdapter" Name="RendicionBono" UserDataComponentName="RendicionBonoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HospitalConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        FAR_PEDIDOS_PUBLICO_CAB.PED_NOMBRE_CLI AS Afiliado, FAR_PEDIDOS_PUBLICO_CAB.NHC, far_insumos.REM_NOMBRE AS Medicamento, FAR_PEDIDOS_PUBLICO_DET.PED_CANTIDAD_INS AS Cantidad, 
+                         FAR_PEDIDOS_PUBLICO_DET.PED_CANTIDAD_INS * FAR_PEDIDOS_PUBLICO_DET.PED_PRECIO_INS AS Total, FAR_PEDIDOS_PUBLICO_DET.PED_INS_DESC AS Descuento, FAR_PEDIDOS_PUBLICO_CAB.PED_FECHA, 
+                         FAR_PEDIDOS_PUBLICO_CAB.AUX_USUARIO, FAR_PEDIDOS_PUBLICO_CAB.PED_USUARIO
+FROM            FAR_PEDIDOS_PUBLICO_CAB INNER JOIN
+                         FAR_PEDIDOS_PUBLICO_DET ON FAR_PEDIDOS_PUBLICO_CAB.PED_ID = FAR_PEDIDOS_PUBLICO_DET.PED_ID INNER JOIN
+                         far_insumos ON FAR_PEDIDOS_PUBLICO_DET.PED_INSUMO_ID = far_insumos.REM_ID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Afiliado" DataSetColumn="Afiliado" />
+              <Mapping SourceColumn="NHC" DataSetColumn="NHC" />
+              <Mapping SourceColumn="Medicamento" DataSetColumn="Medicamento" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+              <Mapping SourceColumn="Total" DataSetColumn="Total" />
+              <Mapping SourceColumn="Descuento" DataSetColumn="Descuento" />
+              <Mapping SourceColumn="PED_FECHA" DataSetColumn="PED_FECHA" />
+              <Mapping SourceColumn="AUX_USUARIO" DataSetColumn="AUX_USUARIO" />
+              <Mapping SourceColumn="PED_USUARIO" DataSetColumn="PED_USUARIO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CABTableAdapter" GeneratorDataComponentClassName="H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CABTableAdapter" Name="H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CAB" UserDataComponentName="H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CABTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HospitalConnectionString (Settings)" DbObjectName="Hospital.dbo.H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CAB" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CAB</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PED_ID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NroPedido" DataSetColumn="NroPedido" />
+              <Mapping SourceColumn="Cliente" DataSetColumn="Cliente" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="Usuario" DataSetColumn="Usuario" />
+              <Mapping SourceColumn="NHC" DataSetColumn="NHC" />
+              <Mapping SourceColumn="Auditor" DataSetColumn="Auditor" />
+              <Mapping SourceColumn="Auditor_Nombre" DataSetColumn="Auditor_Nombre" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BusquedaPorUsuarioRendiBonoTableAdapter" GeneratorDataComponentClassName="BusquedaPorUsuarioRendiBonoTableAdapter" Name="BusquedaPorUsuarioRendiBono" UserDataComponentName="BusquedaPorUsuarioRendiBonoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HospitalConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        FAR_PEDIDOS_PUBLICO_CAB.PED_NOMBRE_CLI AS Afiliado, FAR_PEDIDOS_PUBLICO_CAB.NHC, far_insumos.REM_NOMBRE AS Medicamento, FAR_PEDIDOS_PUBLICO_DET.PED_CANTIDAD_INS AS Cantidad, 
+                         FAR_PEDIDOS_PUBLICO_DET.PED_CANTIDAD_INS * FAR_PEDIDOS_PUBLICO_DET.PED_PRECIO_INS AS Total, FAR_PEDIDOS_PUBLICO_DET.PED_INS_DESC AS Descuento, FAR_PEDIDOS_PUBLICO_CAB.PED_FECHA, 
+                         FAR_PEDIDOS_PUBLICO_CAB.AUX_USUARIO
+FROM            FAR_PEDIDOS_PUBLICO_CAB INNER JOIN
+                         FAR_PEDIDOS_PUBLICO_DET ON FAR_PEDIDOS_PUBLICO_CAB.PED_ID = FAR_PEDIDOS_PUBLICO_DET.PED_ID INNER JOIN
+                         far_insumos ON FAR_PEDIDOS_PUBLICO_DET.PED_INSUMO_ID = far_insumos.REM_ID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" ColumnName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@usuario" Precision="0" Scale="0" Size="0" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Afiliado" DataSetColumn="Afiliado" />
+              <Mapping SourceColumn="NHC" DataSetColumn="NHC" />
+              <Mapping SourceColumn="Medicamento" DataSetColumn="Medicamento" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+              <Mapping SourceColumn="Total" DataSetColumn="Total" />
+              <Mapping SourceColumn="Descuento" DataSetColumn="Descuento" />
+              <Mapping SourceColumn="PED_FECHA" DataSetColumn="PED_FECHA" />
+              <Mapping SourceColumn="AUX_USUARIO" DataSetColumn="AUX_USUARIO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Buscar_Bono_ContribTableAdapter" GeneratorDataComponentClassName="Buscar_Bono_ContribTableAdapter" Name="Buscar_Bono_Contrib" UserDataComponentName="Buscar_Bono_ContribTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HospitalConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        FAR_PEDIDOS_PUBLICO_CAB.PED_ID, FAR_PEDIDOS_PUBLICO_CAB.PED_NOMBRE_CLI, FAR_PEDIDOS_PUBLICO_CAB.PED_FECHA, FAR_PEDIDOS_PUBLICO_CAB.PED_USUARIO, FAR_PEDIDOS_PUBLICO_CAB.NHC, 
+                         FAR_PEDIDOS_PUBLICO_CAB.COD_AUDITOR, FAR_PEDIDOS_PUBLICO_CAB.AUX_USUARIO, Usuarios.id, Usuarios.usuario, Usuarios.password, Usuarios.nombre, Usuarios.tipo, Usuarios.perfil, Usuarios.nroperfil, 
+                         Usuarios.activo, Usuarios.seccional, Usuarios.interno, Usuarios.fechavencimiento, Usuarios.permisos, Usuarios.permisosB, Usuarios.Pregunta, Usuarios.Respuesta, Usuarios.Email, Usuarios.FechaNacimiento, 
+                         Usuarios.FechaAlta, Usuarios.Altapor, Usuarios.FechaModificado, Usuarios.PermisoG, Usuarios.EsSeccional
+FROM            FAR_PEDIDOS_PUBLICO_CAB INNER JOIN
+                         Usuarios ON CONVERT(int, FAR_PEDIDOS_PUBLICO_CAB.PED_USUARIO) = Usuarios.id
+WHERE        (FAR_PEDIDOS_PUBLICO_CAB.PED_USUARIO &lt;&gt; 'Administrador')
+ORDER BY FAR_PEDIDOS_PUBLICO_CAB.PED_ID DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PED_FECHA" DataSetColumn="PED_FECHA" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="usuario" DataSetColumn="usuario" />
+              <Mapping SourceColumn="password" DataSetColumn="password" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="tipo" DataSetColumn="tipo" />
+              <Mapping SourceColumn="perfil" DataSetColumn="perfil" />
+              <Mapping SourceColumn="nroperfil" DataSetColumn="nroperfil" />
+              <Mapping SourceColumn="activo" DataSetColumn="activo" />
+              <Mapping SourceColumn="seccional" DataSetColumn="seccional" />
+              <Mapping SourceColumn="interno" DataSetColumn="interno" />
+              <Mapping SourceColumn="fechavencimiento" DataSetColumn="fechavencimiento" />
+              <Mapping SourceColumn="permisos" DataSetColumn="permisos" />
+              <Mapping SourceColumn="permisosB" DataSetColumn="permisosB" />
+              <Mapping SourceColumn="Pregunta" DataSetColumn="Pregunta" />
+              <Mapping SourceColumn="Respuesta" DataSetColumn="Respuesta" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="FechaNacimiento" DataSetColumn="FechaNacimiento" />
+              <Mapping SourceColumn="FechaAlta" DataSetColumn="FechaAlta" />
+              <Mapping SourceColumn="Altapor" DataSetColumn="Altapor" />
+              <Mapping SourceColumn="FechaModificado" DataSetColumn="FechaModificado" />
+              <Mapping SourceColumn="PermisoG" DataSetColumn="PermisoG" />
+              <Mapping SourceColumn="EsSeccional" DataSetColumn="EsSeccional" />
+              <Mapping SourceColumn="PED_ID" DataSetColumn="PED_ID" />
+              <Mapping SourceColumn="PED_NOMBRE_CLI" DataSetColumn="PED_NOMBRE_CLI" />
+              <Mapping SourceColumn="PED_USUARIO" DataSetColumn="PED_USUARIO" />
+              <Mapping SourceColumn="NHC" DataSetColumn="NHC" />
+              <Mapping SourceColumn="COD_AUDITOR" DataSetColumn="COD_AUDITOR" />
+              <Mapping SourceColumn="AUX_USUARIO" DataSetColumn="AUX_USUARIO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources>
+          <DbSource ConnectionRef="HospitalConnectionString (Settings)" DbObjectName="Hospital.dbo.H2_Insert_Pedidos_Publico_Cab" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="H2_Insert_Pedidos_Publico_Cab" MethodsParameterType="CLR" Modifier="Public" Name="H2_Insert_Pedidos_Publico_Cab" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="H2_Insert_Pedidos_Publico_Cab">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.H2_Insert_Pedidos_Publico_Cab</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Cliente" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Usuario" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@NHC" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@COD_AUDITOR" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="HospitalConnectionString (Settings)" DbObjectName="Hospital.dbo.H2_Insert_Pedidos_Publico_Det" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="H2_Insert_Pedidos_Publico_Det" MethodsParameterType="CLR" Modifier="Public" Name="H2_Insert_Pedidos_Publico_Det" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="H2_Insert_Pedidos_Publico_Det">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.H2_Insert_Pedidos_Publico_Det</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@NroPedido" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@InsumoID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@InsumoCant" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="smallmoney" DbType="Currency" Direction="Input" ParameterName="@InsumoPrecio" Precision="10" ProviderType="SmallMoney" Scale="4" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Descuento" Precision="0" ProviderType="VarChar" Scale="0" Size="3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CANT_UNIDADES" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@Usuario" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@NroLote" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BonoFarmacia" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="BonoFarmacia" msprop:Generator_UserDSName="BonoFarmacia">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RendicionBono" msprop:Generator_TableClassName="RendicionBonoDataTable" msprop:Generator_TableVarName="tableRendicionBono" msprop:Generator_TablePropName="RendicionBono" msprop:Generator_RowDeletingName="RendicionBonoRowDeleting" msprop:Generator_RowChangingName="RendicionBonoRowChanging" msprop:Generator_RowEvHandlerName="RendicionBonoRowChangeEventHandler" msprop:Generator_RowDeletedName="RendicionBonoRowDeleted" msprop:Generator_UserTableName="RendicionBono" msprop:Generator_RowChangedName="RendicionBonoRowChanged" msprop:Generator_RowEvArgName="RendicionBonoRowChangeEvent" msprop:Generator_RowClassName="RendicionBonoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Afiliado" msprop:Generator_ColumnVarNameInTable="columnAfiliado" msprop:Generator_ColumnPropNameInRow="Afiliado" msprop:Generator_ColumnPropNameInTable="AfiliadoColumn" msprop:Generator_UserColumnName="Afiliado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NHC" msprop:Generator_ColumnVarNameInTable="columnNHC" msprop:Generator_ColumnPropNameInRow="NHC" msprop:Generator_ColumnPropNameInTable="NHCColumn" msprop:Generator_UserColumnName="NHC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Medicamento" msprop:Generator_ColumnVarNameInTable="columnMedicamento" msprop:Generator_ColumnPropNameInRow="Medicamento" msprop:Generator_ColumnPropNameInTable="MedicamentoColumn" msprop:Generator_UserColumnName="Medicamento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" />
+              <xs:element name="Total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Descuento" msprop:Generator_ColumnVarNameInTable="columnDescuento" msprop:Generator_ColumnPropNameInRow="Descuento" msprop:Generator_ColumnPropNameInTable="DescuentoColumn" msprop:Generator_UserColumnName="Descuento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PED_FECHA" msprop:Generator_ColumnVarNameInTable="columnPED_FECHA" msprop:Generator_ColumnPropNameInRow="PED_FECHA" msprop:Generator_ColumnPropNameInTable="PED_FECHAColumn" msprop:Generator_UserColumnName="PED_FECHA" type="xs:dateTime" />
+              <xs:element name="AUX_USUARIO" msprop:Generator_ColumnVarNameInTable="columnAUX_USUARIO" msprop:Generator_ColumnPropNameInRow="AUX_USUARIO" msprop:Generator_ColumnPropNameInTable="AUX_USUARIOColumn" msprop:Generator_UserColumnName="AUX_USUARIO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PED_USUARIO" msprop:Generator_ColumnVarNameInTable="columnPED_USUARIO" msprop:Generator_ColumnPropNameInRow="PED_USUARIO" msprop:Generator_ColumnPropNameInTable="PED_USUARIOColumn" msprop:Generator_UserColumnName="PED_USUARIO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CAB" msprop:Generator_TableClassName="H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CABDataTable" msprop:Generator_TableVarName="tableH2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CAB" msprop:Generator_RowChangedName="H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CABRowChanged" msprop:Generator_TablePropName="H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CAB" msprop:Generator_RowDeletingName="H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CABRowDeleting" msprop:Generator_RowChangingName="H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CABRowChanging" msprop:Generator_RowEvHandlerName="H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CABRowChangeEventHandler" msprop:Generator_RowDeletedName="H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CABRowDeleted" msprop:Generator_RowClassName="H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CABRow" msprop:Generator_UserTableName="H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CAB" msprop:Generator_RowEvArgName="H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CABRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NroPedido" msprop:Generator_ColumnVarNameInTable="columnNroPedido" msprop:Generator_ColumnPropNameInRow="NroPedido" msprop:Generator_ColumnPropNameInTable="NroPedidoColumn" msprop:Generator_UserColumnName="NroPedido" type="xs:int" />
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" />
+              <xs:element name="Usuario" msprop:Generator_ColumnVarNameInTable="columnUsuario" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_UserColumnName="Usuario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NHC" msprop:Generator_ColumnVarNameInTable="columnNHC" msprop:Generator_ColumnPropNameInRow="NHC" msprop:Generator_ColumnPropNameInTable="NHCColumn" msprop:Generator_UserColumnName="NHC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Auditor" msprop:Generator_ColumnVarNameInTable="columnAuditor" msprop:Generator_ColumnPropNameInRow="Auditor" msprop:Generator_ColumnPropNameInTable="AuditorColumn" msprop:Generator_UserColumnName="Auditor" type="xs:int" minOccurs="0" />
+              <xs:element name="Auditor_Nombre" msprop:Generator_ColumnVarNameInTable="columnAuditor_Nombre" msprop:Generator_ColumnPropNameInRow="Auditor_Nombre" msprop:Generator_ColumnPropNameInTable="Auditor_NombreColumn" msprop:Generator_UserColumnName="Auditor_Nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BusquedaPorUsuarioRendiBono" msprop:Generator_TableClassName="BusquedaPorUsuarioRendiBonoDataTable" msprop:Generator_TableVarName="tableBusquedaPorUsuarioRendiBono" msprop:Generator_RowChangedName="BusquedaPorUsuarioRendiBonoRowChanged" msprop:Generator_TablePropName="BusquedaPorUsuarioRendiBono" msprop:Generator_RowDeletingName="BusquedaPorUsuarioRendiBonoRowDeleting" msprop:Generator_RowChangingName="BusquedaPorUsuarioRendiBonoRowChanging" msprop:Generator_RowEvHandlerName="BusquedaPorUsuarioRendiBonoRowChangeEventHandler" msprop:Generator_RowDeletedName="BusquedaPorUsuarioRendiBonoRowDeleted" msprop:Generator_RowClassName="BusquedaPorUsuarioRendiBonoRow" msprop:Generator_UserTableName="BusquedaPorUsuarioRendiBono" msprop:Generator_RowEvArgName="BusquedaPorUsuarioRendiBonoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Afiliado" msprop:Generator_ColumnVarNameInTable="columnAfiliado" msprop:Generator_ColumnPropNameInRow="Afiliado" msprop:Generator_ColumnPropNameInTable="AfiliadoColumn" msprop:Generator_UserColumnName="Afiliado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NHC" msprop:Generator_ColumnVarNameInTable="columnNHC" msprop:Generator_ColumnPropNameInRow="NHC" msprop:Generator_ColumnPropNameInTable="NHCColumn" msprop:Generator_UserColumnName="NHC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Medicamento" msprop:Generator_ColumnVarNameInTable="columnMedicamento" msprop:Generator_ColumnPropNameInRow="Medicamento" msprop:Generator_ColumnPropNameInTable="MedicamentoColumn" msprop:Generator_UserColumnName="Medicamento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" />
+              <xs:element name="Total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Descuento" msprop:Generator_ColumnVarNameInTable="columnDescuento" msprop:Generator_ColumnPropNameInRow="Descuento" msprop:Generator_ColumnPropNameInTable="DescuentoColumn" msprop:Generator_UserColumnName="Descuento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PED_FECHA" msprop:Generator_ColumnVarNameInTable="columnPED_FECHA" msprop:Generator_ColumnPropNameInRow="PED_FECHA" msprop:Generator_ColumnPropNameInTable="PED_FECHAColumn" msprop:Generator_UserColumnName="PED_FECHA" type="xs:dateTime" />
+              <xs:element name="AUX_USUARIO" msprop:Generator_ColumnVarNameInTable="columnAUX_USUARIO" msprop:Generator_ColumnPropNameInRow="AUX_USUARIO" msprop:Generator_ColumnPropNameInTable="AUX_USUARIOColumn" msprop:Generator_UserColumnName="AUX_USUARIO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Buscar_Bono_Contrib" msprop:Generator_TableClassName="Buscar_Bono_ContribDataTable" msprop:Generator_TableVarName="tableBuscar_Bono_Contrib" msprop:Generator_TablePropName="Buscar_Bono_Contrib" msprop:Generator_RowDeletingName="Buscar_Bono_ContribRowDeleting" msprop:Generator_RowChangingName="Buscar_Bono_ContribRowChanging" msprop:Generator_RowEvHandlerName="Buscar_Bono_ContribRowChangeEventHandler" msprop:Generator_RowDeletedName="Buscar_Bono_ContribRowDeleted" msprop:Generator_UserTableName="Buscar_Bono_Contrib" msprop:Generator_RowChangedName="Buscar_Bono_ContribRowChanged" msprop:Generator_RowEvArgName="Buscar_Bono_ContribRowChangeEvent" msprop:Generator_RowClassName="Buscar_Bono_ContribRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PED_FECHA" msprop:Generator_ColumnVarNameInTable="columnPED_FECHA" msprop:Generator_ColumnPropNameInRow="PED_FECHA" msprop:Generator_ColumnPropNameInTable="PED_FECHAColumn" msprop:Generator_UserColumnName="PED_FECHA" type="xs:dateTime" />
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:long" />
+              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="password" msprop:Generator_ColumnVarNameInTable="columnpassword" msprop:Generator_ColumnPropNameInRow="password" msprop:Generator_ColumnPropNameInTable="passwordColumn" msprop:Generator_UserColumnName="password" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tipo" msprop:Generator_ColumnVarNameInTable="columntipo" msprop:Generator_ColumnPropNameInRow="tipo" msprop:Generator_ColumnPropNameInTable="tipoColumn" msprop:Generator_UserColumnName="tipo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="perfil" msprop:Generator_ColumnVarNameInTable="columnperfil" msprop:Generator_ColumnPropNameInRow="perfil" msprop:Generator_ColumnPropNameInTable="perfilColumn" msprop:Generator_UserColumnName="perfil" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nroperfil" msprop:Generator_ColumnVarNameInTable="columnnroperfil" msprop:Generator_ColumnPropNameInRow="nroperfil" msprop:Generator_ColumnPropNameInTable="nroperfilColumn" msprop:Generator_UserColumnName="nroperfil" type="xs:int" minOccurs="0" />
+              <xs:element name="activo" msprop:Generator_ColumnVarNameInTable="columnactivo" msprop:Generator_ColumnPropNameInRow="activo" msprop:Generator_ColumnPropNameInTable="activoColumn" msprop:Generator_UserColumnName="activo" type="xs:boolean" minOccurs="0" />
+              <xs:element name="seccional" msprop:Generator_ColumnVarNameInTable="columnseccional" msprop:Generator_ColumnPropNameInRow="seccional" msprop:Generator_ColumnPropNameInTable="seccionalColumn" msprop:Generator_UserColumnName="seccional" type="xs:long" minOccurs="0" />
+              <xs:element name="interno" msprop:Generator_ColumnVarNameInTable="columninterno" msprop:Generator_ColumnPropNameInRow="interno" msprop:Generator_ColumnPropNameInTable="internoColumn" msprop:Generator_UserColumnName="interno" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fechavencimiento" msprop:Generator_ColumnVarNameInTable="columnfechavencimiento" msprop:Generator_ColumnPropNameInRow="fechavencimiento" msprop:Generator_ColumnPropNameInTable="fechavencimientoColumn" msprop:Generator_UserColumnName="fechavencimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="permisos" msprop:Generator_ColumnVarNameInTable="columnpermisos" msprop:Generator_ColumnPropNameInRow="permisos" msprop:Generator_ColumnPropNameInTable="permisosColumn" msprop:Generator_UserColumnName="permisos" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="permisosB" msprop:Generator_ColumnVarNameInTable="columnpermisosB" msprop:Generator_ColumnPropNameInRow="permisosB" msprop:Generator_ColumnPropNameInTable="permisosBColumn" msprop:Generator_UserColumnName="permisosB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Pregunta" msprop:Generator_ColumnVarNameInTable="columnPregunta" msprop:Generator_ColumnPropNameInRow="Pregunta" msprop:Generator_ColumnPropNameInTable="PreguntaColumn" msprop:Generator_UserColumnName="Pregunta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Respuesta" msprop:Generator_ColumnVarNameInTable="columnRespuesta" msprop:Generator_ColumnPropNameInRow="Respuesta" msprop:Generator_ColumnPropNameInTable="RespuestaColumn" msprop:Generator_UserColumnName="Respuesta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaNacimiento" msprop:Generator_ColumnVarNameInTable="columnFechaNacimiento" msprop:Generator_ColumnPropNameInRow="FechaNacimiento" msprop:Generator_ColumnPropNameInTable="FechaNacimientoColumn" msprop:Generator_UserColumnName="FechaNacimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FechaAlta" msprop:Generator_ColumnVarNameInTable="columnFechaAlta" msprop:Generator_ColumnPropNameInRow="FechaAlta" msprop:Generator_ColumnPropNameInTable="FechaAltaColumn" msprop:Generator_UserColumnName="FechaAlta" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Altapor" msprop:Generator_ColumnVarNameInTable="columnAltapor" msprop:Generator_ColumnPropNameInRow="Altapor" msprop:Generator_ColumnPropNameInTable="AltaporColumn" msprop:Generator_UserColumnName="Altapor" type="xs:int" minOccurs="0" />
+              <xs:element name="FechaModificado" msprop:Generator_ColumnVarNameInTable="columnFechaModificado" msprop:Generator_ColumnPropNameInRow="FechaModificado" msprop:Generator_ColumnPropNameInTable="FechaModificadoColumn" msprop:Generator_UserColumnName="FechaModificado" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PermisoG" msprop:Generator_ColumnVarNameInTable="columnPermisoG" msprop:Generator_ColumnPropNameInRow="PermisoG" msprop:Generator_ColumnPropNameInTable="PermisoGColumn" msprop:Generator_UserColumnName="PermisoG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EsSeccional" msprop:Generator_ColumnVarNameInTable="columnEsSeccional" msprop:Generator_ColumnPropNameInRow="EsSeccional" msprop:Generator_ColumnPropNameInTable="EsSeccionalColumn" msprop:Generator_UserColumnName="EsSeccional" type="xs:boolean" minOccurs="0" />
+              <xs:element name="PED_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPED_ID" msprop:Generator_ColumnPropNameInRow="PED_ID" msprop:Generator_ColumnPropNameInTable="PED_IDColumn" msprop:Generator_UserColumnName="PED_ID" type="xs:int" />
+              <xs:element name="PED_NOMBRE_CLI" msprop:Generator_ColumnVarNameInTable="columnPED_NOMBRE_CLI" msprop:Generator_ColumnPropNameInRow="PED_NOMBRE_CLI" msprop:Generator_ColumnPropNameInTable="PED_NOMBRE_CLIColumn" msprop:Generator_UserColumnName="PED_NOMBRE_CLI">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PED_USUARIO" msprop:Generator_ColumnVarNameInTable="columnPED_USUARIO" msprop:Generator_ColumnPropNameInRow="PED_USUARIO" msprop:Generator_ColumnPropNameInTable="PED_USUARIOColumn" msprop:Generator_UserColumnName="PED_USUARIO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NHC" msprop:Generator_ColumnVarNameInTable="columnNHC" msprop:Generator_ColumnPropNameInRow="NHC" msprop:Generator_ColumnPropNameInTable="NHCColumn" msprop:Generator_UserColumnName="NHC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COD_AUDITOR" msprop:Generator_ColumnVarNameInTable="columnCOD_AUDITOR" msprop:Generator_ColumnPropNameInRow="COD_AUDITOR" msprop:Generator_ColumnPropNameInTable="COD_AUDITORColumn" msprop:Generator_UserColumnName="COD_AUDITOR" type="xs:int" minOccurs="0" />
+              <xs:element name="AUX_USUARIO" msprop:Generator_ColumnVarNameInTable="columnAUX_USUARIO" msprop:Generator_ColumnPropNameInRow="AUX_USUARIO" msprop:Generator_ColumnPropNameInTable="AUX_USUARIOColumn" msprop:Generator_UserColumnName="AUX_USUARIO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Rendicion_Bono" msprop:Generator_TableClassName="Rendicion_BonoDataTable" msprop:Generator_TableVarName="tableRendicion_Bono" msprop:Generator_TablePropName="Rendicion_Bono" msprop:Generator_RowDeletingName="Rendicion_BonoRowDeleting" msprop:Generator_RowChangingName="Rendicion_BonoRowChanging" msprop:Generator_RowEvHandlerName="Rendicion_BonoRowChangeEventHandler" msprop:Generator_RowDeletedName="Rendicion_BonoRowDeleted" msprop:Generator_UserTableName="Rendicion_Bono" msprop:Generator_RowChangedName="Rendicion_BonoRowChanged" msprop:Generator_RowEvArgName="Rendicion_BonoRowChangeEvent" msprop:Generator_RowClassName="Rendicion_BonoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Paciente" msprop:Generator_ColumnVarNameInTable="columnPaciente" msprop:Generator_ColumnPropNameInRow="Paciente" msprop:Generator_ColumnPropNameInTable="PacienteColumn" msprop:Generator_UserColumnName="Paciente" type="xs:string" minOccurs="0" />
+              <xs:element name="NHC" msprop:Generator_ColumnVarNameInTable="columnNHC" msprop:Generator_ColumnPropNameInRow="NHC" msprop:Generator_ColumnPropNameInTable="NHCColumn" msprop:Generator_UserColumnName="NHC" type="xs:string" minOccurs="0" />
+              <xs:element name="Insumo" msprop:Generator_ColumnVarNameInTable="columnInsumo" msprop:Generator_ColumnPropNameInRow="Insumo" msprop:Generator_ColumnPropNameInTable="InsumoColumn" msprop:Generator_UserColumnName="Insumo" type="xs:string" minOccurs="0" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:H2_FAR_PEDIDOS_PUBLICO_SELECT_PRINT_CAB" />
+      <xs:field xpath="mstns:NroPedido" />
+    </xs:unique>
+    <xs:unique name="Buscar_Bono_Contrib_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Buscar_Bono_Contrib" />
+      <xs:field xpath="mstns:PED_ID" />
+      <xs:field xpath="mstns:id" />
+      <xs:field xpath="mstns:usuario" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
